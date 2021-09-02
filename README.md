@@ -136,3 +136,13 @@ rootユーザのパスワード変更を求められるので変更する
 
 ## 参考
 [GitLab Docker images](https://docs.gitlab.com/ee/install/docker.html)
+
+[GitLab をインストールしよう! (Docker Image)](https://qiita.com/masakura/items/e29f1dd4794bcaf066ce)
+
+[Dockerで自宅GitLab環境構築~GitLab-CIの初歩まで](https://qiita.com/ryuichi1208/items/1c08523b0ef34d05026f)
+
+[GitLabを自分のパソコンや社内サーバで動かしてみる](https://blackbird-blog.com/gitlab-localinstall)
+
+[docker-composeを使ってGitLab / Runner のローカル環境](https://tsyama.hatenablog.com/entry/docker-local-gitlab-and-runner)
+
+[[Docker] CentOS 7 にインストールした Docker で GitLab 環境を構築する](https://blog.hiros-dot.net/?p=10426)
