@@ -1,0 +1,19 @@
+version: "3"
+services:
+  web:
+    image: "gitlab/gitlab-ee:13.12.4-ee.0"
+    restart: always
+    hostname: "localhost"
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost:9010'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2022
+        gitlab_rails['time_zone'] = 'Asia/Tokyo'
+    ports:
+      - "9010:9010"
+      - "443:443"
+      - "2022:22"
+    volumes:
+      - "./config:/etc/gitlab"
+      - "./logs:/var/log/gitlab"
+      - "./data:/var/opt/gitlab"
