@@ -1,12 +1,12 @@
 version: "3"
 services:
-  web:
+  gitlab-ee.example.com:
     image: "gitlab/gitlab-ee:13.12.4-ee.0"
     restart: always
-    hostname: "localhost"
+    hostname: "gitlab-ee.example.com"
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://localhost:9010'
+        external_url 'http://gitlab-ee.example.com:9010'
         gitlab_rails['gitlab_shell_ssh_port'] = 2022
         gitlab_rails['time_zone'] = 'Asia/Tokyo'
     ports:
@@ -23,7 +23,7 @@ services:
     image: "gitlab/gitlab-runner:latest"
     restart: always
     depends_on:
-      - web
+      - gitlab-ee.example.com
     volumes: 
       - ./runner/config:/etc/gitlab-runner
       - /var/run/docker.sock:/var/run/docker.sock
