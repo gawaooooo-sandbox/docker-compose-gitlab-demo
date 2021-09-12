@@ -17,12 +17,18 @@ services:
       - "./config:/etc/gitlab"
       - "./logs:/var/log/gitlab"
       - "./data:/var/opt/gitlab"
-
+    networks:
+      - gitlab-network
   runner:
-    image: "gitlab/gitlab-runner:alpine"
+    image: "gitlab/gitlab-runner:latest"
     restart: always
-    links: 
+    depends_on:
       - web
     volumes: 
-      - /var/run/docker.sock:/var/run/docker.sock
       - ./runner/config:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - gitlab-network
+
+networks:
+  gitlab-network:
